@@ -92,9 +92,8 @@ def add_jags(ext):
 
 def add_numpy(ext):
     try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy"])
         import numpy
-    except subprocess.CalledProcessError as e:
+    except ImportError as e:
         print(f"Error {e}")
     ext.include_dirs.append(numpy.get_include())
 
