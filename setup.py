@@ -94,8 +94,8 @@ def add_numpy(ext):
     try:
         subprocess.check_call([sys.executable, "-m", "pip", "install", "numpy"])
         import numpy
-    except ImportError:
-        print("Error")
+    except subprocess.CalledProcessError as e:
+        print(f"Error {e}")
     ext.include_dirs.append(numpy.get_include())
 
 
