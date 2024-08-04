@@ -141,6 +141,7 @@ if __name__ == '__main__':
           ],
           packages=['pyjags'],
           ext_modules=[ext],
+          setup_requires=['numpy'],
           install_requires=[
               'numpy',
               'arviz',
